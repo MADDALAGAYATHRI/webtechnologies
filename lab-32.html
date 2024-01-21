@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      opacity
+    }
+    #message {
+      margin-top: 10px;
+      color: red;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .navbar-nav {
+      margin-left: auto; /* Move the navbar items to the right */
+    }
+  </style>
+</head>
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+  <!-- Example Code -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <lo class="nav-item">
+          <a class="nav-link active" aria-current="page" href="lab-3.html"><b>Home</b></a>
+        </lo>
+        <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="lab-31.html"><b>Signup</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Example Code -->
+
+  <br><br>
+  <h3 style="text-align: center;">Login</h3>
+
+  <br><br>
+  <form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <div id="message"></div>
+  
+    <button type="button" onclick="validateLogin()">Login In</button>
+  </form>
+
+  <script>
+    function validateLogin() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var message = document.getElementById("message");
+
+      // Clear previous messages
+      message.innerHTML = "";
+      var specificEmailFormatRegex =/^[a-zA-Z]+\.[a-zA-Z]+_[0-9]{4}@woxsen\.edu\.in$/
+      // Retrieve stored signup information from localStorage
+      var storedEmail = localStorage.getItem('signupEmail');
+      var storedPassword = localStorage.getItem('signupPassword');
+
+      // Check if email and password match the stored credentials
+      if (email === storedEmail && password === storedPassword) {
+        message.innerHTML = "Login successful!";
+        message.style.color = "green";
+      } else {
+        message.innerHTML = "Invalid email or password.";
+        message.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
